@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+  gohello:
+    image: go/hello
+    container_name: my-golang-app-run
+    volumes:
+      - ./:/go/src/app
+    working_dir: /go/src/app
+    ports:
+      - "3030:3001"
+    environment:
+      PORT: 3001
